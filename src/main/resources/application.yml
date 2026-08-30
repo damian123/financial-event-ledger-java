@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: financial-event-ledger
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eventledger
+    username: eventledger
+    password: eventledger
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-bigdecimal-as-plain: true
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+eventledger:
+  outbox:
+    enabled: true
+    poll-interval-ms: 1000
+    batch-size: 50
+    max-attempts: 3
+
+logging:
+  level:
+    io.github.damian123.eventledger: INFO

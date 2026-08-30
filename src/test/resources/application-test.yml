@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+eventledger:
+  outbox:
+    enabled: false
+    poll-interval-ms: 3600000
+    batch-size: 20
+    max-attempts: 3
+
+logging:
+  level:
+    io.github.damian123.eventledger: INFO
+    org.testcontainers: INFO
