@@ -30,7 +30,7 @@ OpenAPI is served at [`/swagger-ui/index.html`](http://localhost:8080/swagger-ui
 
 ## Two-minute run
 
-Requires Java 21 and Docker.
+Requires Java 26 and Docker.
 
 ```bash
 docker compose up -d
@@ -68,7 +68,7 @@ curl -s -X POST http://localhost:8080/api/v1/reconciliations/run
 
 Integration tests start PostgreSQL with Testcontainers and cover happy-path posting, idempotent replay, conflicting keys, scale rejection, reversals, forced imbalance, dead-letter after three publish failures, and concurrent duplicate ingest.
 
-GitHub Actions runs `./gradlew --no-daemon check` on Java 21.
+GitHub Actions runs `./gradlew --no-daemon check` on Java 26.
 
 ## Important design decisions
 
