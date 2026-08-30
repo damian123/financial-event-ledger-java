@@ -15,10 +15,6 @@ spring:
           time_zone: UTC
   flyway:
     enabled: true
-  jackson:
-    serialization:
-      write-dates-as-timestamps: false
-      write-bigdecimal-as-plain: true
 
 server:
   port: 8080
